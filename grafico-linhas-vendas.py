@@ -7,9 +7,11 @@ import matplotlib.ticker as mtick
 df_vendas=pd.read_excel('vendas.xlsx', "Vendas")
 display(df_vendas)
 
+sns.set_theme(style="ticks")
+
 graf_linhas = sns.lineplot(data=df_vendas, x="Lojas", y="Vendas", color="red", linewidth=2)
 fig = plt.gcf()
-fig.set_size_inches(10, 6)
+fig.set_size_inches(10.5, 6.5)
 graf_linhas.set(title="Vendas de Jan/Mar 2023", xlabel="Lojas", ylabel="Vendas")
 graf_linhas.set(ylim=(0, 2000000))
 graf_linhas.tick_params(axis='x', labelrotation=45)
